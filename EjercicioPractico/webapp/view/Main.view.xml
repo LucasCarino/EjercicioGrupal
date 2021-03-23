@@ -1,45 +1,41 @@
 <mvc:View controllerName="EjercicioPractico.EjercicioPractico.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
     <Page id="page" title="Ruta Main">
         <content>
-        <FlexBox direction="Column">
-            <Title text="Métodos" titleStyle="H1" />
-            <Text text="SAPUI5 proporciona métodos con nombres predefinidos que tienen diferentes funcionalidades,
-            estos se ejecutaran en un momento específico del 'ciclo de vida' de la página.
-            Desde el controlador, se pueden agregar eventos o funcionalidades a estos métodos que respetarán
-            automaticamente el ciclo de vida del método." />
+        <FlexBox justifyContent="Center">
+            <FlexBox direction="Column" width="60%">
+                <Title text="Métodos" titleStyle="H1" />
+                <Text text="SAPUI5 proporciona métodos con nombres predefinidos que tienen diferentes funcionalidades,
+                estos se ejecutaran en un momento específico del 'ciclo de vida' de la página.
+                Desde el controlador, se pueden agregar eventos o funcionalidades a estos métodos que respetarán
+                automaticamente el ciclo de vida del método." id="texto"/>
 
-            <Title text="onInit()" titleStyle="H2" />
+                <Title text="onInit()" titleStyle="H2" />
 
-            <Text text="Este método se ejecuta cuando se inicializa la vista. 
-            A diferencia del onBeforeRendering() y onAfterRendering(), este método se ejecuta
-            solo una vez. Generalmente, se utiliza para vincular datos e inicializar modelos que 
-            necesitaremos antes de que se muestre la vista" />
-            <Title text="onBeforeRendering()" titleStyle="H2" />
+                <Text text="Este método se ejecuta cuando se inicializa la vista. 
+                A diferencia del onBeforeRendering() y onAfterRendering(), este método se ejecuta
+                solo una vez. Generalmente, se utiliza para vincular datos e inicializar modelos que 
+                necesitaremos antes de que se muestre la vista" />
 
-            <Text text="Este método se llama cada vez que se renderice la Vista y antes de que se 
-            llame al Renderer y se coloque el HTML en el DOM.
-            Es muy similar al onInit(), pero su principal diferencia es que onAfterRendering() se
-            volverá a ejercutar cada vez que se renderice la vista, en cambio, onInit(), solo se
-            ejecuta una sola vez." />
+                <Title text="onBeforeRendering()" titleStyle="H2" />
 
-            <Text text="Por ejemplo: Si queremos utilizar oData que se va a ir modificando en tiempo real, es necesario
-            colocar estos datos en 'onBeforeRendering()'. Si se coloca en onInit(), el usuario no
-            va a poder apreciar ningún cambio de datos luego de la ejecución de este, ya que se ejecutaría 
-            solo una vez." />
+                <Text text="Este método se ejecuta cada vez que se renderice la Vista y antes de que se 
+                llame al Renderer y se coloque el HTML en el DOM." />
 
-            <Title text="onAfterRendering()" titleStyle="H2" />
+                <Title text="onAfterRendering()" titleStyle="H2" />
 
-            <Text text="Este método se llama cada vez que se renderice la Vista y despues de que 
-            el HTML se coloque en el DOM. Se podría utilizar para agregar funciones luego de que
-            la vista fue renderizada" />
+                <Text text="Este método se ejecuta cada vez que se renderice la Vista y despues de que 
+                el HTML se coloque en el DOM. Se podría utilizar para agregar funciones luego de que
+                la vista fue renderizada" />
 
-            <Title text="onExit()" titleStyle="H2" />
+                <Title text="onExit()" titleStyle="H2" />
 
-            <Text text="Este método se llama luego de destruir una Vista. El controlador 
-            debe realizar su destrucción interna en esta función. Solo se llama una vez por instancia,
-            a diferencia de los métodos onBeforeRendering() y onAfterRendering().
-            Generalmente se utiliza para liberar recursos." />
-            <Button press="onNavigate" text="Ejecutar onExit()" />
+                <Text text="Este método se ejecuta luego de destruir una Vista. El controlador 
+                debe realizar su destrucción interna en esta función. Solo se llama una vez por instancia,
+                a diferencia de los métodos onBeforeRendering() y onAfterRendering().
+                Generalmente se utiliza para liberar recursos." />
+
+                <Button press="onNavigate" text="Ejecutar onExit()" width="100%" />
+            </FlexBox>
         </FlexBox>
         </content>
     </Page>

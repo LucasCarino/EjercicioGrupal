@@ -1,28 +1,33 @@
 sap.ui.define([
         "sap/ui/core/mvc/Controller",
-        "sap/m/MessageBox"
+        "sap/m/MessageBox",
+        "EjercicioPractico/EjercicioPractico/util/Common"
 	],
 	/**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-	function (Controller, MessageBox) {
+	function (Controller, MessageBox, Commons) {
 		"use strict";
 		return Controller.extend("EjercicioPractico.EjercicioPractico.controller.Main", {
 			onInit: function () {
-                // alert('Método onInit()')
+                alert('Método onInit()');
+                this.getOwnerComponent().getRouter().getRoute("RouteSecondary").attachPatternMatched(this.test, this);
             },
             onBeforeRendering: function () {
-                // alert('Método onBeforeRendering()');
+                alert('Método onBeforeRendering()');
             },
             onAfterRendering: function () {
-                // alert('Método onAfterRendering()');
+                alert('Método onAfterRendering()');
             },
             onExit: function () {
                 alert('Método onExit()')
             },
             onNavigate: function () {
                 this.getView().destroy();
-                this.getOwnerComponent().getRouter().navTo("RouteSecondary");
+                Commons.onNavigate(this, "RouteSecondary");
+            },
+            test: function () {
+                this.getView();
             }
 		});
 	});

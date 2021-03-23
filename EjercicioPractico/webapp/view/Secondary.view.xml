@@ -1,13 +1,17 @@
 <mvc:View controllerName="EjercicioPractico.EjercicioPractico.controller.Secondary" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
     <Page id="page" title="Ruta Secundaria" showNavButton="true" navButtonPress="onBack">
-        <content>
+        <content >
+        <FlexBox justifyContent="Center">
+            <FlexBox width="60%" direction="Column">
             <Title text="attachPatternMatched()" titleStyle="H2" />
-            <Text text="Attach sirve para ejecutar una función la cual se puede colocar en el onInit 
+            <Text text="Attach sirve para ejecutar una función la cual se puede colocar en el onInit() 
             pero esta se ejecutará cada vez que se inicie la vista, es decir, alterar su función original.
             Quedaría similar al metodo onBeforeRendering()." />
             
             <Text text="En este ejemplo, al cambiar de vista, se ejecutará las funciones que se encuentren dentro
             del onInit() del controlador de la ruta secundaria, cada vez que esta sea renderizada." />
+            </FlexBox>
+        </FlexBox>
         </content>
     </Page>
 </mvc:View>
