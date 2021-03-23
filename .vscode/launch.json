@@ -1,0 +1,25 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run EjercicioGrupal-EjercicioPractico",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/ejerciciogrupal-approuter/node_modules/@sap/html5-repo-mock/index.js",
+      "args": [
+        "--standalone",
+        "/EjercicioPracticoEjercicioPractico/index.html",
+        "--ui5",
+        "{\"version\":\"1.84.9\"}"
+      ],
+      "cwd": "${workspaceFolder}/EjercicioPractico",
+      "env": {
+        "PORT": "6004",
+        "MOCK_LOOKUP_DIRS": "[\"webapp\"]",
+        "run.config": "{\"handlerId\":\"ui5_run_config_handler_id\",\"runnableId\":\"/home/user/projects/EjercicioGrupal/EjercicioPractico\"}"
+      },
+      "envFile": "${workspaceFolder}/EjercicioPractico/.env1",
+      "preLaunchTask": "Build EjercicioGrupal"
+    }
+  ]
+}

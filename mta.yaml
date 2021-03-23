@@ -1,0 +1,50 @@
+_schema-version: "3.2"
+ID: EjercicioGrupal
+version: 0.0.1
+modules:
+- name: ejerciciogrupal-approuter
+  type: approuter.nodejs
+  path: ejerciciogrupal-approuter
+  requires:
+  - name: EjercicioGrupal_html_repo_runtime
+  parameters:
+    disk-quota: 256M
+    memory: 256M
+- name: EjercicioGrupal_ui_deployer
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: EjercicioGrupal_html_repo_host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - EjercicioPractico-content.zip
+      name: EjercicioPractico
+      target-path: resources/
+- name: EjercicioPractico
+  type: html5
+  path: EjercicioPractico
+  build-parameters:
+    builder: custom
+    commands:
+    - npm run build
+    supported-platforms: []
+resources:
+- name: EjercicioGrupal_html_repo_runtime
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-runtime
+- name: EjercicioGrupal_html_repo_host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-host
+build-parameters:
+  before-all:
+  - builder: custom
+    commands:
+    - npm install
